@@ -1,4 +1,5 @@
 ﻿using P2_AP1_Reny20190003.UI.Consultas;
+using P2_AP1_Reny20190003.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,8 @@ namespace P2_AP1_Reny20190003
 
         private void ProyectosMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            rProyecto proyecto = new rProyecto();
+            proyecto.Show();
         }
 
         private void TiposTareasMenuItem_Click(object sender, RoutedEventArgs e)
