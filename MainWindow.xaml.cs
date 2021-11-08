@@ -1,4 +1,5 @@
-﻿using System;
+﻿using P2_AP1_Reny20190003.UI.Consultas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,22 @@ namespace P2_AP1_Reny20190003
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ProyectosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TiposTareasMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cTiposTareas consulta = new cTiposTareas();
+            consulta.Show();
+        }
+
+        private void ProyectoCMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
