@@ -5,19 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:P2_AP1_Reny20190003.UI.Registros"
         mc:Ignorable="d"
-        Title="rProyecto" Height="450" Width="800">
+        Title="rProyecto" Height="494" Width="821">
     <Grid>
         <StackPanel>
-
-
 
             <StackPanel Margin="10">
                 <Label Content="Proyecto Id: " Margin="5,0,0,0"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBox x:Name="ProyectoIdTextBox" Width="130" HorizontalAlignment="Left" Margin="10,0,0,0" Height="20"/>
-                    <Button x:Name="BuscarButton" Margin="5,0">
+                    <Button x:Name="BuscarButton" Margin="5,0" Click="BuscarButton_Click">
                         <StackPanel Orientation='Horizontal'>
-                            <Image Source="/Resources/seo-social-web-network-internet_340_icon-icons.com_61497.png" Height="20"/>
+                            <Image Source="/Resources/preview_search_find_locate_1551.png" Width="25"/>
+
                             <Label Content="Buscar"/>
                         </StackPanel>
                     </Button>
@@ -68,11 +67,9 @@
 
 
                             <StackPanel Margin="10,12,0,0">
-                                <Button x:Name="AgregarButton">
+                                <Button x:Name="AgregarButton" Click="AgregarButton_Click">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="/Resources/1904677-add-addition-calculate-charge-create-new-plus_122527.png" Height="20" />
-
-
+                                        <Image Source="/Resources/flat-style-circle-add_icon-icons.com_66944.png" Width="25"/>
 
                                         <Label Content="Agregar"/>
                                     </StackPanel>
@@ -102,11 +99,9 @@
 
 
                         <StackPanel>
-                            <Button x:Name="RemoverFilaButton" Width="100" HorizontalAlignment="Left" Margin="15,5">
+                            <Button x:Name="RemoverFilaButton" Width="100" HorizontalAlignment="Left" Margin="15,5" Click="RemoverFilaButton_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Resources/1904666-calculate-close-delete-hide-minimize-minus-remove_122516.png" Height="20"/>
-
-
+                                    <Image Source="/Resources/1486504817-delete-minus-cancel-exit-remove_81373.png" Width="25"/>
 
                                     <Label Content="Remover Fila"/>
                                 </StackPanel>
@@ -127,28 +122,21 @@
             <StackPanel Orientation="Horizontal" Margin="20,0,0,0" >
                 <Button x:Name="NuevoButton" Margin="0,0" Click="NuevoButton_Click">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/newfile_85903.png" Height="20"/>
-
-
+                        <Image Source="/Resources/flat-style-circle-add_icon-icons.com_66944.png" Width="25" />
 
                         <Label Content="Nuevo" />
                     </StackPanel>
                 </Button>
                 <Button x:Name="GuardarButton" Margin="10,0" Click="GuardarButton_Click">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/save_3621.png" Height="20"/>
-
-
+                        <Image Source="/Resources/Save_37110.png" Width="25" />
 
                         <Label Content="Guardar" />
                     </StackPanel>
                 </Button>
                 <Button x:Name="EliminarButton" Margin="0,0" Click="EliminarButton_Click">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/seo-social-web-network-internet_262_icon-icons.com_61518.png" Height="25"/>
-
-
-
+                        <Image Source="/Resources/1486564399-close_81512.png" Width="25"/>
                         <Label Content="Eliminar" />
                     </StackPanel>
                 </Button>
