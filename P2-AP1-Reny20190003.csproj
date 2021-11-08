@@ -8,8 +8,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\1486504817-delete-minus-cancel-exit-remove_81373.png" />
+    <None Remove="Resources\1486564399-close_81512.png" />
+    <None Remove="Resources\flat-style-circle-add_icon-icons.com_66944.png" />
+    <None Remove="Resources\preview_search_find_locate_1551.png" />
+    <None Remove="Resources\Save_37110.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\1486504817-delete-minus-cancel-exit-remove_81373.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\1486564399-close_81512.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\flat-style-circle-add_icon-icons.com_66944.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\preview_search_find_locate_1551.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Save_37110.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="DATA\" />
-    <Folder Include="UI\Registros\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +43,21 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
