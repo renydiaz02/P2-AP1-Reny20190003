@@ -4,11 +4,12 @@ using P2_AP1_Reny20190003.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace P2_AP1_Reny20190003.BLL
-{/*
+{
     public class ProyectosBLL
     {
         public static bool Guardar(Proyectos proyecto)
@@ -18,6 +19,7 @@ namespace P2_AP1_Reny20190003.BLL
             else
                 return Modificar(proyecto);
         }
+
         private static bool Insertar(Proyectos proyecto)
         {
             bool paso = false;
@@ -27,17 +29,17 @@ namespace P2_AP1_Reny20190003.BLL
             {
                 contexto.Proyectos.Add(proyecto);
 
-                foreach (var detalle in proyecto.DescripcionProyecto)
+                foreach (var detalle in proyecto.Detalle)
                 {
                     contexto.Entry(detalle).State = EntityState.Added;
                     contexto.Entry(detalle.TiposTarea).State = EntityState.Modified;
                     contexto.Entry(detalle.Proyecto).State = EntityState.Modified;
+                    detalle.TiposTarea.TiempoAcumulado += detalle.Tiempo;
                     detalle.Proyecto.Total += detalle.Tiempo;
                 }
 
                 paso = contexto.SaveChanges() > 0;
             }
-
             catch (Exception)
             {
                 throw;
@@ -67,22 +69,22 @@ namespace P2_AP1_Reny20190003.BLL
                     detalle.TiposTarea.TiempoAcumulado -= detalle.Tiempo;
                     detalle.Proyecto.Total -= detalle.Tiempo;
                 }
+
+                contexto.Database.ExecuteSqlRaw($"Delete FROM ProyectosDetalle Where Id={proyecto.ProyectoId}");
+
+                foreach (var item in proyecto.Detalle)
+                {
+                    contexto.Entry(item).State = EntityState.Added;
+                    contexto.Entry(item.TiposTarea).State = EntityState.Modified;
+                    contexto.Entry(item.Proyecto).State = EntityState.Modified;
+                    item.TiposTarea.TiempoAcumulado += item.Tiempo;
+                    item.Proyecto.Total += item.Tiempo;
+                }
+
+                contexto.Entry(proyecto).State = EntityState.Modified;
+                paso = contexto.SaveChanges() > 0;
             }
-
-            contexto.Database.ExecuteSqlRaw($"Delete FROM ProyectosDetalle where Id={proyecto.ProyectoId}");
-            foreach (var item in proyecto.Detalle)
-            {
-                contexto.Entry(item).State = EntityState.Added;
-                contexto.Entry(item.TiposTarea).State = EntityState.Modified;
-                contexto.Entry(item.Proyecto).State = EntityState.Modified;
-                item.TiposTarea.TiempoAcumulado += item.Tiempo;
-                item.Proyecto.Total += item.Tiempo;
-            }
-
-            contexto.Entry(proyecto).State = EntityState.Modified;
-            paso = contexto.SaveChanges() > 0;
-
-               catch (Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -90,10 +92,32 @@ namespace P2_AP1_Reny20190003.BLL
             {
                 contexto.Dispose();
             }
+            return paso;
+        }
+        public static Proyectos Buscar(int id)
+        {
+            Proyectos proyecto = new Proyectos();
+            Contexto contexto = new Contexto();
 
+            try
+            {
+                proyecto = contexto.Proyectos.Include(x => x.Detalle)
+                    .Where(x => x.ProyectoId == id)
+                     .Include(x => x.Detalle)
+                    .ThenInclude(x => x.TiposTarea)
+                    .SingleOrDefault();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
             return proyecto;
         }
-
         public static bool Eliminar(int id)
         {
             bool paso = false;
@@ -102,20 +126,70 @@ namespace P2_AP1_Reny20190003.BLL
             try
             {
                 var proyecto = Buscar(id);
+
                 if (proyecto != null)
                 {
-                    foreach(var item in proyecto.Detalle)
+                    foreach (var item in proyecto.Detalle)
                     {
                         contexto.Entry(item.Proyecto).State = EntityState.Modified;
                         contexto.Entry(item.TiposTarea).State = EntityState.Modified;
                         item.TiposTarea.TiempoAcumulado -= item.Tiempo;
-                        item.proyecto.Total -= item.Tiempo;
+                        item.Proyecto.Total -= item.Tiempo;
                     }
                     contexto.Proyectos.Remove(proyecto);
                     paso = contexto.SaveChanges() > 0;
                 }
+
             }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return paso;
+        }
+        public static List<Proyectos> GetList(Expression<Func<Proyectos, bool>> criterio)
+        {
+            List<Proyectos> Lista = new List<Proyectos>();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                Lista = contexto.Proyectos.Where(criterio).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return Lista;
+        }
+        public static bool Existe(int id)
+        {
+            Contexto contexto = new Contexto();
+            bool encontrado = false;
+
+            try
+            {
+                encontrado = contexto.Proyectos.Any(e => e.ProyectoId == id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return encontrado;
         }
 
-    }*/
+    }
 }
