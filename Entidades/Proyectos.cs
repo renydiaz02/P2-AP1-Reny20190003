@@ -17,6 +17,6 @@ namespace P2_AP1_Reny20190003.Entidades
         public int Total { get; set; }
 
         [ForeignKey("ProyectoId")]
-        /*  public virtual List<ProyectosDetalle> Detalle { get; set; } = new List<ProyectosDetalle>();*/
+          public virtual List<ProyectosDetalles> Detalle { get; set; } = new List<ProyectosDetalles>();
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace P2_AP1_Reny20190003.DAL
-{/*
+{
     public class Contexto : DbContext
     {
         public DbSet<TiposTareas> TiposTareas { get; set; }
@@ -22,27 +22,27 @@ namespace P2_AP1_Reny20190003.DAL
             modelBuilder.Entity<TiposTareas>().HasData(new TiposTareas
             {
                 TipoTareaId = 1,
-                Descripcion = "Análisis",
-                Tiempo = 0
+                DescripcionTipoTarea = "Análisis",
+                TiempoAcumulado = 0
             });
             modelBuilder.Entity<TiposTareas>().HasData(new TiposTareas
             {
                 TipoTareaId = 2,
-                Descripcion = "Diseño",
-                Tiempo = 0
+                DescripcionTipoTarea = "Diseño",
+                TiempoAcumulado = 0
             });
             modelBuilder.Entity<TiposTareas>().HasData(new TiposTareas
             {
                 TipoTareaId = 3,
-                Descripcion = "Programación",
-                Tiempo= 0
+                DescripcionTipoTarea = "Programación",
+                TiempoAcumulado = 0
             });
             modelBuilder.Entity<TiposTareas>().HasData(new TiposTareas
             {
                 TipoTareaId = 4,
-                Descripcion = "Prueba",
-                Tiempo = 0
+                DescripcionTipoTarea = "Prueba",
+                TiempoAcumulado = 0
             });
         }
-    }*/
+    }
 }

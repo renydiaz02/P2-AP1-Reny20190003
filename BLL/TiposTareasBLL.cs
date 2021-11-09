@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace P2_AP1_Reny20190003.BLL
-{/*
+{
     public class TiposTareasBLL
     {
         public static TiposTareas Buscar(int Id)
@@ -69,5 +69,5 @@ namespace P2_AP1_Reny20190003.BLL
             }
             return Lista;
         }
-    }*/
+    }
 }
