@@ -25,18 +25,15 @@ namespace P2_AP1_Reny20190003.UI.Consultas
         {
             InitializeComponent();
         }
-
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             var listado = new List<TiposTareas>();
-
             switch (FiltroComboBox.SelectedIndex)
             {
-                case 0: //Listado
+                case 0:
                     listado = TiposTareasBLL.GetTiposTarea();
                     break;
             }
-
             DatosDataGrid.ItemsSource = null;
             DatosDataGrid.ItemsSource = listado;
         }

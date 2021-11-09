@@ -8,7 +8,6 @@
         Title="rProyecto" Height="494" Width="821">
     <Grid>
         <StackPanel>
-
             <StackPanel Margin="10">
                 <Label Content="Proyecto Id: " Margin="5,0,0,0"/>
                 <StackPanel Orientation="Horizontal">
@@ -16,56 +15,33 @@
                     <Button x:Name="BuscarButton" Margin="5,0" Click="BuscarButton_Click">
                         <StackPanel Orientation='Horizontal'>
                             <Image Source="/Resources/preview_search_find_locate_1551.png" Width="25"/>
-
                             <Label Content="Buscar"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
-
             </StackPanel>
-
-
-
             <StackPanel>
                 <Label Content="Fecha" Margin="20,0,0,0"/>
                 <DatePicker Width="150" HorizontalAlignment="Left" Margin="20,0,0,0"/>
-
-
-
                 <Label Content="Descripcion" Margin="20,10,0,0"/>
                 <TextBox x:Name="DescripcionTextBox" Height="50" Margin="20,0,20,0"/>
             </StackPanel>
-
-
-
             <StackPanel Margin="10,10,10,0">
                 <GroupBox Header="Detalle de tareas a realizar">
-
-
-
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
                             <StackPanel Margin="0,0,10,0">
                                 <Label Content="Tipo de Tarea"/>
                                 <ComboBox x:Name="TipoTareaComboBox" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0"/>
                             </StackPanel>
-
-
-
                             <StackPanel Margin="0,0,10,0">
                                 <Label Content="Requerimiento de la tarea"/>
                                 <TextBox x:Name="RequerimientoTextBox" Width="200" Margin="5,0"/>
                             </StackPanel>
-
-
-
                             <StackPanel Margin="0,0,10,0">
                                 <Label Content="Tiempo (Minutos)" />
                                 <TextBox x:Name="TiempoTextBox" Width="130" Margin="5,0"/>
                             </StackPanel>
-
-
-
                             <StackPanel Margin="10,12,0,0">
                                 <Button x:Name="AgregarButton" Click="AgregarButton_Click">
                                     <StackPanel Orientation="Horizontal">
@@ -75,13 +51,7 @@
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
-
-
-
                         </StackPanel>
-
-
-
                         <StackPanel>
                             <DataGrid x:Name="DetalleDataGrid" Height="80" Width="600" HorizontalAlignment="Left" Margin="15,5,0,0" AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
@@ -90,14 +60,8 @@
                                     <DataGridTextColumn Header="Requerimiento" Width="150"/>
                                     <DataGridTextColumn Header="Tiempo " Width="130"/>
                                 </DataGrid.Columns>
-
-
-
                             </DataGrid>
                         </StackPanel>
-
-
-
                         <StackPanel>
                             <Button x:Name="RemoverFilaButton" Width="100" HorizontalAlignment="Left" Margin="15,5" Click="RemoverFilaButton_Click">
                                 <StackPanel Orientation="Horizontal">
@@ -108,29 +72,18 @@
                             </Button>
                         </StackPanel>
                     </StackPanel>
-
-
-
                 </GroupBox>
-
-
-
             </StackPanel>
-
-
-
             <StackPanel Orientation="Horizontal" Margin="20,0,0,0" >
                 <Button x:Name="NuevoButton" Margin="0,0" Click="NuevoButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/flat-style-circle-add_icon-icons.com_66944.png" Width="25" />
-
                         <Label Content="Nuevo" />
                     </StackPanel>
                 </Button>
                 <Button x:Name="GuardarButton" Margin="10,0" Click="GuardarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/Save_37110.png" Width="25" />
-
                         <Label Content="Guardar" />
                     </StackPanel>
                 </Button>
