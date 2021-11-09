@@ -12,7 +12,7 @@ namespace P2_AP1_Reny20190003.Entidades
         [Key]
 
         public int TipoTareaId { get; set; }
-        public string Descripcion { get; set; }
-        public int Tiempo { get; set; }
+        public string DescripcionTipoTarea { get; set; }
+        public int TiempoAcumulado { get; set; }
     }
 }

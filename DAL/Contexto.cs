@@ -7,11 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace P2_AP1_Reny20190003.DAL
-{
+{/*
     public class Contexto : DbContext
     {
         public DbSet<TiposTareas> TiposTareas { get; set; }
-
+        public DbSet<Proyectos> Proyectos { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(@" Data Source = DATA\Project.db");
@@ -44,5 +44,5 @@ namespace P2_AP1_Reny20190003.DAL
                 Tiempo = 0
             });
         }
-    }
+    }*/
 }
