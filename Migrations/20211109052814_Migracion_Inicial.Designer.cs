@@ -9,8 +9,8 @@ using P2_AP1_Reny20190003.DAL;
 namespace P2_AP1_Reny20190003.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20211109005550_migracionInicial")]
-    partial class migracionInicial
+    [Migration("20211109052814_Migracion_Inicial")]
+    partial class Migracion_Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -14,7 +14,8 @@
                 </MenuItem>
                 <MenuItem Header="Consultas">
                     <MenuItem x:Name="TiposTareasMenuItem" Header="Consulta de Tipos de Tareas" Click="TiposTareasMenuItem_Click"/>
-                    <MenuItem x:Name="ProyectoCMenuItem" Header="Consulta de Proyectos" Click="ProyectoCMenuItem_Click"/>
+                    
+                    <MenuItem x:Name="ProyectoConsMenuItem" Header="Consulta de Proyectos" Click="ProyectoConsMenuItem_Click"/>
                 </MenuItem>
             </Menu>
         </StackPanel>

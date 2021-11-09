@@ -39,9 +39,11 @@ namespace P2_AP1_Reny20190003
             consulta.Show();
         }
 
-        private void ProyectoCMenuItem_Click(object sender, RoutedEventArgs e)
+        private void ProyectoConsMenuItem_Click(object sender, RoutedEventArgs e)
         {
+            cProyecto proyecto = new cProyecto();
 
+            proyecto.Show();
         }
     }
 }
