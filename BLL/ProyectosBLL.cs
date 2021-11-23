@@ -70,15 +70,16 @@ namespace P2_AP1_Reny20190003.BLL
                     detalle.Proyecto.Total -= detalle.Tiempo;
                 }
 
-                contexto.Database.ExecuteSqlRaw($"Delete FROM ProyectosDetalle Where Id={proyecto.ProyectoId}");
+                contexto.Database.ExecuteSqlRaw($"Delete FROM ProyectosDetalles Where Id={proyecto.ProyectoId}");
 
-                foreach (var item in proyecto.Detalle)
+
+                foreach(var detalle in proyecto.Detalle)
                 {
-                    contexto.Entry(item).State = EntityState.Added;
-                    contexto.Entry(item.TiposTarea).State = EntityState.Modified;
-                    contexto.Entry(item.Proyecto).State = EntityState.Modified;
-                    item.TiposTarea.TiempoAcumulado += item.Tiempo;
-                    item.Proyecto.Total += item.Tiempo;
+                    contexto.Entry(detalle).State = EntityState.Added;
+                    contexto.Entry(detalle.TiposTarea).State = EntityState.Modified;
+                    contexto.Entry(detalle.Proyecto).State = EntityState.Modified;
+                    detalle.TiposTarea.TiempoAcumulado += detalle.Tiempo;
+                    detalle.Proyecto.Total += detalle.Tiempo;
                 }
 
                 contexto.Entry(proyecto).State = EntityState.Modified;
